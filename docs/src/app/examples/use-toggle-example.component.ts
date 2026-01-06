@@ -148,22 +148,10 @@ import { useToggle } from '@nguse/core';
           <!-- Code Example -->
           <div class="bg-white rounded-lg shadow-md p-6">
             <h2 class="text-2xl font-semibold text-slate-800 mb-4">Usage</h2>
-            <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto text-sm"><code>import {{ '{' }} Component {{ '}' }} from '@angular/core';
-import {{ '{' }} useToggle {{ '}' }} from '@nguse/core';
-
-@Component({{ '{' }}
-  selector: 'app-example',
-  template: \`
-    &lt;p&gt;Status: {{ '{{' }} isOpen() ? 'Open' : 'Closed' {{ '}}' }}&lt;/p&gt;
-    &lt;button (click)="toggleState.toggle()"&gt;Toggle&lt;/button&gt;
-    &lt;button (click)="toggleState.setTrue()"&gt;Open&lt;/button&gt;
-    &lt;button (click)="toggleState.setFalse()"&gt;Close&lt;/button&gt;
-  \`
-{{ '}' }})
-export class ExampleComponent {{ '{' }}
-  toggleState = useToggle(false);
-  isOpen = this.toggleState.value;
-{{ '}' }}</code></pre>
+            <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto text-sm"><code>
+            
+            {{ exampleCode }}
+ </code></pre>
           </div>
 
           <!-- API Reference -->
@@ -210,4 +198,22 @@ export class UseToggleExampleComponent {
   isVisible = this.visibilityToggle.value;
   isDarkMode = this.darkModeToggle.value;
   isModalOpen = this.modalToggle.value;
+
+  exampleCode = `
+  import { Component } from '@angular/core';
+  import { useToggle } from '@nguse/core';
+
+@Component({
+  selector: 'app-example',
+  template: \`
+    &lt;p&gt;Status: {{ '{{' }} isOpen() ? 'Open' : 'Closed' {{ '}}' }}&lt;/p&gt;
+    &lt;button (click)="toggleState.toggle()"&gt;Toggle&lt;/button&gt;
+    &lt;button (click)="toggleState.setTrue()"&gt;Open&lt;/button&gt;
+    &lt;button (click)="toggleState.setFalse()"&gt;Close&lt;/button&gt;
+  \`
+{{ '}' }})
+export class ExampleComponent {{ '{' }}
+  toggleState = useToggle(false);
+  isOpen = this.toggleState.value;
+{{ '}' }} `;
 }
