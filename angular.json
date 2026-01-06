@@ -3,26 +3,52 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nguse": {
+    "core": {
+      "projectType": "library",
+      "root": "projects/core",
+      "sourceRoot": "projects/core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/core/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "docs": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
+      "root": "docs",
+      "sourceRoot": "docs/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
-            "tsConfig": "tsconfig.app.json",
+            "browser": "docs/src/main.ts",
+            "tsConfig": "docs/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "docs/public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "docs/src/styles.css"
             ]
           },
           "configurations": {
@@ -53,10 +79,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "nguse:build:production"
+              "buildTarget": "docs:build:production"
             },
             "development": {
-              "buildTarget": "nguse:build:development"
+              "buildTarget": "docs:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -67,42 +93,16 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "docs/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "docs/public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "docs/src/styles.css"
             ]
-          }
-        }
-      }
-    },
-    "core": {
-      "projectType": "library",
-      "root": "projects/core",
-      "sourceRoot": "projects/core/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/core/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/core/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
-          "options": {
-            "tsConfig": "projects/core/tsconfig.spec.json"
           }
         }
       }
