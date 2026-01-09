@@ -5,18 +5,18 @@
   "projects": {
     "core": {
       "projectType": "library",
-      "root": "projects/core",
-      "sourceRoot": "projects/core/src",
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/core/tsconfig.lib.prod.json"
+              "tsConfig": "libs/core/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/core/tsconfig.lib.json"
+              "tsConfig": "libs/core/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -24,7 +24,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "projects/core/tsconfig.spec.json"
+            "tsConfig": "libs/core/tsconfig.spec.json"
           }
         }
       }
@@ -32,23 +32,23 @@
     "docs": {
       "projectType": "application",
       "schematics": {},
-      "root": "docs",
-      "sourceRoot": "docs/src",
+      "root": "apps/docs",
+      "sourceRoot": "apps/docs/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "docs/src/main.ts",
-            "tsConfig": "docs/tsconfig.app.json",
+            "browser": "apps/docs/src/main.ts",
+            "tsConfig": "apps/docs/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "docs/public"
+                "input": "apps/docs/public"
               }
             ],
             "styles": [
-              "docs/src/styles.css"
+              "apps/docs/src/styles.css"
             ]
           },
           "configurations": {
@@ -93,15 +93,15 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "docs/tsconfig.spec.json",
+            "tsConfig": "apps/docs/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "docs/public"
+                "input": "apps/docs/public"
               }
             ],
             "styles": [
-              "docs/src/styles.css"
+              "apps/docs/src/styles.css"
             ]
           }
         }
