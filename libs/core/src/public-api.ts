@@ -3,4 +3,4 @@
  */
 
 export * from './lib/core';
-export * from './lib/use-toggle';
+export * from './lib/use-toggle/use-toggle';

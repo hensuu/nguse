@@ -13,13 +13,13 @@ This file provides context for Claude Code when working with this repository.
 - **Tailwind CSS 4** for styling
 - **pnpm** as package manager
 - **ng-packagr** for library builds
+- **Zard UI** for UI components
 
 ## Project Structure
 
 ```
-apps//       # Demo/documentation Angular app
+apps/site/       # Demo/documentation Angular app
 libs/core/       # @nguse/core library (composables)
-/
 ```
 
 ## Commands
