@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { useToggle } from '@nguse/core';
+import { ZardButtonComponent } from '@/shared/components/button/button.component';
 
 @Component({
   selector: 'app-use-toggle-example',
   standalone: true,
+  imports: [ZardButtonComponent],
   templateUrl: './use-toggle-example.component.html',
 })
 export class UseToggleExampleComponent {

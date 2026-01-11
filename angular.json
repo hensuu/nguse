@@ -29,26 +29,26 @@
         }
       }
     },
-    "docs": {
+    "site": {
       "projectType": "application",
       "schematics": {},
-      "root": "apps/docs",
-      "sourceRoot": "apps/docs/src",
+      "root": "apps/site",
+      "sourceRoot": "apps/site/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "apps/docs/src/main.ts",
-            "tsConfig": "apps/docs/tsconfig.app.json",
+            "browser": "apps/site/src/main.ts",
+            "tsConfig": "apps/site/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/docs/public"
+                "input": "apps/site/public"
               }
             ],
             "styles": [
-              "apps/docs/src/styles.css"
+              "apps/site/src/styles.css"
             ]
           },
           "configurations": {
@@ -79,10 +79,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "docs:build:production"
+              "buildTarget": "site:build:production"
             },
             "development": {
-              "buildTarget": "docs:build:development"
+              "buildTarget": "site:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,15 +93,15 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "apps/docs/tsconfig.spec.json",
+            "tsConfig": "apps/site/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/docs/public"
+                "input": "apps/site/public"
               }
             ],
             "styles": [
-              "apps/docs/src/styles.css"
+              "apps/site/src/styles.css"
             ]
           }
         }

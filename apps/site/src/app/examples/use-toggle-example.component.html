@@ -22,18 +22,18 @@
             </div>
           </div>
           <div class="flex gap-2">
-            <button (click)="toggleState.toggle()"
-              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            <z-button (click)="toggleState.toggle()"
+              >
               Toggle
-            </button>
-            <button (click)="toggleState.setTrue()"
+            </z-button>
+            <z-button (click)="toggleState.setTrue()"
               class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
               Open
-            </button>
-            <button (click)="toggleState.setFalse()"
+            </z-button>
+            <z-button (click)="toggleState.setFalse()"
               class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
               Close
-            </button>
+            </z-button>
           </div>
         </div>
       </div>
@@ -52,10 +52,10 @@
             </p>
           </div>
           }
-          <button (click)="visibilityToggle.toggle()" class="px-4 py-2 rounded-lg transition-colors"
+          <z-button (click)="visibilityToggle.toggle()" class="px-4 py-2 rounded-lg transition-colors"
             [class]="isVisible() ? 'bg-slate-600 text-white hover:bg-slate-700' : 'bg-blue-600 text-white hover:bg-blue-700'">
             {{ isVisible() ? 'Hide' : 'Show' }} Content
-          </button>
+          </z-button>
         </div>
       </div>
 
@@ -74,10 +74,10 @@
                   {{ isDarkMode() ? 'Easy on the eyes' : 'Bright and clear' }}
                 </p>
               </div>
-              <button (click)="darkModeToggle.toggle()" class="px-4 py-2 rounded-lg transition-colors"
+              <z-button (click)="darkModeToggle.toggle()" class="px-4 py-2 rounded-lg transition-colors"
                 [class]="isDarkMode() ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-900 text-white hover:bg-slate-800'">
                 Switch to {{ isDarkMode() ? 'Light' : 'Dark' }} Mode
-              </button>
+              </z-button>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="p-3 rounded" [class]="isDarkMode() ? 'bg-slate-800' : 'bg-white'">
@@ -97,10 +97,10 @@
       <div class="bg-white rounded-lg shadow-md p-6">
         <h2 class="text-2xl font-semibold text-slate-800 mb-4">Modal Toggle</h2>
         <div class="space-y-4">
-          <button (click)="modalToggle.setTrue()"
+          <z-button (click)="modalToggle.setTrue()"
             class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
             Open Modal
-          </button>
+          </z-button>
 
           @if (isModalOpen()) {
           <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -111,14 +111,14 @@
                 This is a modal dialog. Click outside or press the close button to dismiss it.
               </p>
               <div class="flex gap-2 justify-end">
-                <button (click)="modalToggle.setFalse()"
+                <z-button (click)="modalToggle.setFalse()"
                   class="px-4 py-2 bg-slate-200 text-slate-800 rounded-lg hover:bg-slate-300 transition-colors">
                   Cancel
-                </button>
-                <button (click)="modalToggle.setFalse()"
+                </z-button>
+                <z-button (click)="modalToggle.setFalse()"
                   class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
                   Confirm
-                </button>
+                </z-button>
               </div>
             </div>
           </div>

@@ -6,6 +6,9 @@
     "paths": {
       "@nguse/core": [
         "./dist/core"
+      ],
+      "@/*": [
+        "src/app/*"
       ]
     },
     "strict": true,
@@ -18,7 +21,8 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "baseUrl": "./"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -42,10 +46,10 @@
       "path": "./libs/core/tsconfig.spec.json"
     },
     {
-      "path": "./apps/docs/tsconfig.app.json"
+      "path": "./apps/site/tsconfig.app.json"
     },
     {
-      "path": "./apps/docs/tsconfig.spec.json"
+      "path": "./apps/site/tsconfig.spec.json"
     }
   ]
 }
